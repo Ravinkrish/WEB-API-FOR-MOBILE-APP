@@ -1,0 +1,202 @@
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: darkblue;
+    color: white;
+}
+</style>
+
+<br/><br/><br/><br/><br/>
+<div class="col-md-3 col-sm-3 col-xs-8 form-group pull-right top_search">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." ng-model="searchtext">
+        <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+    </div>
+</div>
+<table id="customers">
+    <button type="button" style="background-color:darkblue;" class="btn btn-success" ng-click="showAddForm()" data-toggle="modal" data-target="#exampleModal" >Add New Canvas</button>
+    <br/><br/>
+    <tr>
+        <th>Title</th>
+        <th>date</th>
+        <!--<th>Time</th>-->
+        <th>address</th>
+        <th>Description</th>
+        <th>Expected Crowd</th>
+        <th>OtherChiefGuest</th>
+        <th>Action</th>
+    </tr>
+    <tr dir-paginate="canvas in canvasList|filter:searchtext|itemsPerPage:3">
+        <td>{{canvas.Title}}</td>
+        <td>{{canvas.Date}}</td>
+        <!--<td>{{canvas.Time}}</td>-->
+        <td>{{canvas.Address}}</td>
+        <td>{{canvas.Description}}</td>
+        <td>{{canvas.ExpectedGrowth}}</td>
+        <td>{{canvas.OtherChiefGuest}}</td>
+        <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" ng-click="showEditForm(); getCanvas(canvas._id)" >
+            <span class="glyphicon glyphicon-pencil"></span>update
+            </button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ng-click="openDeleteModal(canvas._id);">
+                <span class="glyphicon glyphicon-trash" ></span>delete
+            </button>
+            <button type="button" class="btn btn-primary" ng-click="uploadMoreImages(canvas._id)">upload more images
+            </button>
+
+        </td>
+    </tr>
+
+
+
+</table>
+<dir-pagination-controls class="paging" style="margin-left:450px;"
+                         max-size="3"
+                         direction-links="true"
+                         boundary-links="true" >
+</dir-pagination-controls>
+<div ng-hide="true">
+    <input id="uploadBtn" type="file" class="upload" file-model="myFile">
+    <button style="color:black;" ng-click="upload()" id="upload">Upload Logo</button>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+
+    <!-- Modal content-->
+<div class="modal-dialog modal-md">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Confirm Deletion</h4>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure you want to delete this item ?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal"  id="btnClose">No</button>
+            <button type="submit" class="btn btn-default" data-dismiss="modal" ng-click="deleteCanvas(deleteCanvasId)">
+                Yes
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+<br/><br/>
+<!--<div>-->
+    <!--<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" >Add New Canvas</button>-->
+<!--</div>-->
+<!--<br/><br/>-->
+<!--<img class="card-img-top" src="images/p1.jpg" alt="Card image cap">-->
+<!--<div class="card" style="width: 57rem;margin-left:350px;margin-top:-210px;">-->
+    <!--<div class="card-header">-->
+        <!--CANVAS DETAILS-->
+    <!--</div>-->
+    <!--<ul class="list-group list-group-flush">-->
+        <!--<li class="list-group-item" style="background-color:deepskyblue;"> <span style="color:black;">TITLE:</span>{{CanvasDetailsdata[0].Title}}</li>-->
+        <!--<li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">DATE:</span>{{CanvasDetailsdata[0].Date}}</li>-->
+        <!--<li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">ADDRESS:</span>{{CanvasDetailsdata[0].Address}}</li>-->
+        <!--<li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">DESCRIPTION:</span>{{CanvasDetailsdata[0].Description}}</li>-->
+    <!--</ul>-->
+<!--</div>-->
+<!--<div style="margin-left:960px;">-->
+<!--<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span>update</button>-->
+<!--<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>delete</button>-->
+<!--</div>-->
+
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>-->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>-->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{formTitle}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-title" class="form-control-label">title:</label>
+                        <input type="text" class="form-control" id="recipient-title" ng-model="canvas.Title">
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="recipient-name" class="form-control-label">Date:</label>
+                        <input type="text" class="form-control" id="recipient-name" ng-model="canvas.Date">
+                    </div>-->
+                    <div class="form-group">
+                        <label  for="recipient-name"  class="col-form-label" >Date
+                        </label>
+                        <div class="input-group" ng-controller="dateandtimepicCtrl as ctrl">
+                            <input type="text" class="form-control" id="recipient-name" datetime-picker  ng-model="canvas.Date" is-open="ctrl.picker6.open"  ng-change="dateAndTime(ctrl.picker6.date);changingDateValue(ctrl.picker6.date)" ng-init="ctrl.picker6.date"/>
+                            <span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="ctrl.openCalendar($event, 'picker6')"><span class="glyphicon glyphicon-calendar"></span>
+									</button>
+									</span>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="recipient-name" class="form-control-label">Time:</label>
+                        <input type="text" class="form-control" id="recipient-time" ng-model="canvas.Time">
+                    </div>-->
+                    <div class="form-group">
+                        <label for="message-text" class="form-control-label">Address:</label>
+                        <textarea class="form-control" id="message-address" ng-model="canvas.Address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="form-control-label">Description:</label>
+                        <textarea class="form-control" id="message-text" ng-model="canvas.Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="form-control-label">ExpectedCrowd:</label>
+                        <input type="text" class="form-control" id="recipient-crowd" ng-model="canvas.ExpectedGrowth">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="form-control-label">OtherChiefGuest:</label>
+                        <input type="text" class="form-control" id="recipient-guest" ng-model="canvas.OtherChiefGuest">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateCanvas()" ng-show="showEditbtn">Update details</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveDetails()"  ng-show="showAddBtn">Save details</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+<script>
+
+    $('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+</script>-->
