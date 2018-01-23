@@ -89,6 +89,7 @@ console.log(file)
  var filess = $('#uploadBtn')[0].files[0]
          console.log(filess)
         fileUpload.uploadFileToUrl(filess).then(function (response) {
+        alert("image uploaded")
         console.log(response.data);
         var filedata=response.data;
         if (filedata){

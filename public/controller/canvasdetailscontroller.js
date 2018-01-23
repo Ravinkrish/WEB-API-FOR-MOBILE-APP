@@ -73,18 +73,14 @@ webapp.controller("CanvasCtrl",function($scope,CanvasServices,$timeout,fileUploa
 $scope.files = [];
 $scope.upload=function(){
  var file=$scope.myFile;
-//  console.log($scope.files);
-console.log(file)
-//  console.log(file.name);
-//    alert($scope.files.length+" files selected ... Write your Upload Code");
+
  var filess = $('#uploadBtn')[0].files[0]
-         console.log(filess)
         fileUpload.uploadFileToUrl(filess).then(function (response) {
         console.log(response.data);
         var filedata=response.data;
         if (filedata){
         console.log(filedata,imagearrayid);
-        CanvasServices.updateMoreImages(imagearrayid,filedata).then(function(response){
+        CanvasServices.updateMoreImages(imagearrayid, filedata, {fileObj:file.base64}).then(function(response){
         console.log(response.data);
         })
 

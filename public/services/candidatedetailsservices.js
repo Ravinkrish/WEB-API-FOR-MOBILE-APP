@@ -31,7 +31,6 @@ var logodata;
 
     var setCompanyLogoImages=function(logo)
     {
-//        console.log(logo);
     logodata=logo;
     }
     var getCompanyLogoImages=function()

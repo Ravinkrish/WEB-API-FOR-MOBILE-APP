@@ -45,6 +45,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="controller/canvasdetailscontroller.js"></script>
 <script src="controller/Achievementdetailscontroller.js"></script>
 <script src="controller/contactdetailscontroller.js"></script>
+<script src="controller/indexcontroller.js"></script>
 <script src="controller/datetimescript.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.0/ui-bootstrap-tpls.js"></script>
 
@@ -54,6 +55,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="services/candidatedetailsservices.js"></script>
 <script src="services/eventdetailsservices.js"></script>
 <script src="services/canvasdetailsservices.js"></script>
+<script src="services/indexservices.js"></script>
 <script src="services/achievementdetailsservices.js"></script>
 <script src="services/contactdetailsservices.js"></script>
 
@@ -70,14 +72,15 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<!--height: 40px;-->
 <!--}-->
 <!--</style>-->
-<body ng-app="webapp">
+<!--<img src="images/logo1.png" alt=" " />-->
+<body ng-app="webapp" ng-controller="IndexCtrl">
 <!-- header -->
 	<div class="header_bg">
 		<div class="container">
 			<!-----start-header----->
 			<div class="header">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo1.png" alt=" " /></a>
+					<img src="data:image/gif;base64,{{SettingDetail.SettingLogo}}" style="height:200px; width:200px; border-radius:100px;" class="card-img-top"/>
 				</div>
 				<nav class="navbar navbar-default">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -95,7 +98,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<ul class="nav navbar-nav">
 							<li class="act"><a ui-sref="home">Aboutus</a></li>
 							<li class="dropdown">
-								<a ui-sref="canvas" data-toggle="dropdown">Canvas<b class="caret"></b></a>
+								<a ui-sref="canvas">Canvas</a>
 								<!--<ul class="dropdown-menu multi-column columns-3">-->
 									<!--<div class="row">-->
 										<!--<div class="party">-->
@@ -110,9 +113,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<!--</div>-->
 								<!--</ul>-->
 							</li>
-							<li><a ui-sref="results">events</a></li>
-							<li><a ui-sref="about">efforts</a></li>
-							<li><a ui-sref="codes">Campaigns</a></li>
+							<li><a ui-sref="results">Events</a></li>
+							<li><a ui-sref="about">Efforts</a></li>
+							<li><a ui-sref="codes" data-toggle="modal" data-target="#exampleModal">Setting</a></li>
 							<li><a ui-sref="contact">Contact Us</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->	
@@ -713,15 +716,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 	<div class="footer">
 		<div class="container">
-			<h3>Sign up for our newsletter</h3>
-			<p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus 
-				tristique bibendum. Donec rutrum sed sem quis venenatis.</p>
-			<div class="footer-contact">
-				<form>
-					<input type="text" placeholder="Enter your email to update" required=" ">
-					<input type="submit" value="">
-				</form>
-			</div>
+			<!--<div class="footer-contact">-->
+				<!--<form>-->
+					<!--<input type="text" placeholder="Enter your email to update" required=" ">-->
+					<!--<input type="submit" value="">-->
+				<!--</form>-->
+			<!--</div>-->
 			<div class="footer-grids">
 				<div class="col-md-3 footer-grid">
 					<p>HALOVIETNAM LTD
@@ -732,47 +732,49 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 				<div class="col-md-2 footer-grid">
 					<ul>
-						<li><a href="contact.html">Contact</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Terms</a></li>
+						<li><a ui-sref ="home">About</a></li>
+						<li><a ui-sref ="canvas">Canvas</a></li>
+						<li><a ui-sref ="results">Events</a></li>
+						<li><a ui-sref ="about">Efforts</a></li>
+						<li><a ui-sref ="codes">Settings</a></li>
+						<li><a ui-sref ="contact">Contact</a></li>
 					</ul>
 				</div>
-				<div class="col-md-2 footer-grid">
-					<ul>
-						<li><a href="#">Download</a></li>
-						<li><a href="#">Support</a></li>
-						<li><a href="#">Documents</a></li>
-					</ul>
-				</div>
-				<div class="col-md-2 footer-grid">
-					<ul>
-						<li><a href="#">Venenatis</a></li>
-						<li><a href="#">Extras</a></li>
-						<li><a href="#">Forums</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<div class="footer-grid-left">
-						<a href="#"><img src="images/1.jpg" alt=" " class="img-responsve" /></a>
-					</div>
-					<div class="footer-grid-left">
-						<a href="#"><img src="images/2.jpg" alt=" " class="img-responsve" /></a>
-					</div>
-					<div class="footer-grid-left">
-						<a href="#"><img src="images/3.jpg" alt=" " class="img-responsve" /></a>
-					</div>
-					<div class="footer-grid-left">
-						<a href="#"><img src="images/4.jpg" alt=" " class="img-responsve" /></a>
-					</div>
-					<div class="footer-grid-left">
-						<a href="#"><img src="images/5.jpg" alt=" " class="img-responsve" /></a>
-					</div>
-					<div class="footer-grid-left">
-						<a href="#"><img src="images/p1.jpg" alt=" " class="img-responsve" /></a>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+				<!--<div class="col-md-2 footer-grid">-->
+					<!--<ul>-->
+						<!--<li><a href="#">Download</a></li>-->
+						<!--<li><a href="#">Support</a></li>-->
+						<!--<li><a href="#">Documents</a></li>-->
+					<!--</ul>-->
+				<!--</div>-->
+				<!--<div class="col-md-2 footer-grid">-->
+					<!--<ul>-->
+						<!--<li><a href="#">Venenatis</a></li>-->
+						<!--<li><a href="#">Extras</a></li>-->
+						<!--<li><a href="#">Forums</a></li>-->
+					<!--</ul>-->
+				<!--</div>-->
+				<!--<div class="col-md-3 footer-grid">-->
+					<!--<div class="footer-grid-left">-->
+						<!--<a href="#"><img src="images/1.jpg" alt=" " class="img-responsve" /></a>-->
+					<!--</div>-->
+					<!--<div class="footer-grid-left">-->
+						<!--<a href="#"><img src="images/2.jpg" alt=" " class="img-responsve" /></a>-->
+					<!--</div>-->
+					<!--<div class="footer-grid-left">-->
+						<!--<a href="#"><img src="images/3.jpg" alt=" " class="img-responsve" /></a>-->
+					<!--</div>-->
+					<!--<div class="footer-grid-left">-->
+						<!--<a href="#"><img src="images/4.jpg" alt=" " class="img-responsve" /></a>-->
+					<!--</div>-->
+					<!--<div class="footer-grid-left">-->
+						<!--<a href="#"><img src="images/5.jpg" alt=" " class="img-responsve" /></a>-->
+					<!--</div>-->
+					<!--<div class="footer-grid-left">-->
+						<!--<a href="#"><img src="images/p1.jpg" alt=" " class="img-responsve" /></a>-->
+					<!--</div>-->
+					<!--<div class="clearfix"> </div>-->
+				<!--</div>-->
 				<div class="clearfix"> </div>
 			</div>
 			<div class="footer-copy">
@@ -781,6 +783,37 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</div>
 	</div>
 <!-- //footer -->
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">New message</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="form-group">
+				<label for="recipient-name" class="col-form-label">App Slogan</label>
+				<input type="text" class="form-control" id="recipient-name" ng-model="SettingDetail.SettingSlogan">
+			</div>
+			<div class="form-group">
+				<label for="recipient-name" class="form-control-label">UploadAppLogo:</label>
+				<input type="file" ng-model="file" name="file" base-sixty-four-input required onload="onLoad" maxsize="500" accept="image/*">
+				<button type="button" style="margin-left: 220px;margin-top: -47px;" class="btn btn-primary" ng-click="uploadfile(file)">Upload</button>
+				<!--<input type="text" class="form-control" id="recipient-logo" ng-model="CandidateDetailsdata.CandidateLogo">-->
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Save setting logo</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">delete setting logo</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 		<!-- scroll_top_btn -->
 <script src="js/jquery.wmuSlider.js"></script>
 <script>

@@ -2991,71 +2991,114 @@ p.est span{
 </div>
 
 <!--<div class="banner-bottom1" style="width:1425px;margin-left: -142px;">-->
-    <!--<div class="banner-bottom1-grids">-->
-        <!--<div class="col-md-4 banner-bottom1-left banner-bottom1-left1" data-toggle="modal" data-target="#exampleModal">-->
-            <!--<div class="banner-bottom1-lft">-->
-                <!--<span class="glyphicon glyphicon-user" aria-hidden="true"></span>-->
-                <!--<h3>Candidate Details</h3>-->
-                <!--<p>Fill the details</p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-4 banner-bottom1-left"  data-toggle="modal" data-target="#exampleModal1" >-->
-            <!--<div class="banner-bottom1-lft">-->
-                <!--<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>-->
-                <!--<h3>Survival Duration</h3>-->
-                <!--<p>Lorem Ipsum is therefore always free.</p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-md-4 banner-bottom1-left banner-bottom1-left2" data-toggle="modal" data-target="#exampleModal2">-->
-            <!--<div class="banner-bottom1-lft">-->
-                <!--<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>-->
-                <!--<h3>Election History</h3>-->
-                <!--<p>Lorem Ipsum is therefore always free.</p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="clearfix"> </div>-->
-    <!--</div>-->
+<!--<div class="banner-bottom1-grids">-->
+<!--<div class="col-md-4 banner-bottom1-left banner-bottom1-left1" data-toggle="modal" data-target="#exampleModal">-->
+<!--<div class="banner-bottom1-lft">-->
+<!--<span class="glyphicon glyphicon-user" aria-hidden="true"></span>-->
+<!--<h3>Candidate Details</h3>-->
+<!--<p>Fill the details</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-4 banner-bottom1-left"  data-toggle="modal" data-target="#exampleModal1" >-->
+<!--<div class="banner-bottom1-lft">-->
+<!--<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>-->
+<!--<h3>Survival Duration</h3>-->
+<!--<p>Lorem Ipsum is therefore always free.</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-4 banner-bottom1-left banner-bottom1-left2" data-toggle="modal" data-target="#exampleModal2">-->
+<!--<div class="banner-bottom1-lft">-->
+<!--<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>-->
+<!--<h3>Election History</h3>-->
+<!--<p>Lorem Ipsum is therefore always free.</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="clearfix"> </div>-->
+<!--</div>-->
 
 <!--</div>-->
-<br/>
-<h3 style="margin-left:470px;">CANDIDATE DETAILS</h3>
-<br/>
-<div style="margin-left: -301px;">
-    <button ng-disabled="disableAddBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCandidateDetails" style="margin-left:300px;">
-        <span class="glyphicon glyphicon-user"></span>Add Candidate Details
-    </button>
-</div>
+<!--<div class="form-group" ng-controller="IndexCtrl">-->
+    <!--<label for="recipient-name" class="form-control-label">update setting:</label>-->
+    <!--<input type="file" ng-model="file" name="file" base-sixty-four-input required onload="onLoad" maxsize="500" accept="image/*">-->
+    <!--<button type="button" style="margin-left: 220px;margin-top: -47px;" class="btn btn-primary" ng-click="uploadfile(file)">Upload</button>-->
+    <!--&lt;!&ndash;<input type="text" class="form-control" id="recipient-logo" ng-model="CandidateDetailsdata.CandidateLogo">&ndash;&gt;-->
+<!--</div>-->
 <br/><br/>
-<!--<img class="card-img-top" src="images/p1.jpg" alt="Card image cap">-->
-<img src="data:image/png;base64,{{candidateDetail.CandidateLogo}}" style="height:270px; width:300px;" class="card-img-top"/>
 
+<div class="container">
 
-<div class="card" style="width: 57rem;margin-left:350px;margin-top:-210px;">
-    <div class="card-header">
+    <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="collapse" data-target="#demo">CANDIDATE DETAILS</button>
+    <div id="demo" class="collapse">
+        <!--<h3 style="margin-left:470px;">CANDIDATE DETAILS</h3>-->
+        <br/>
+        <div style="margin-left: -301px;">
+            <button ng-disabled="disableAddBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCandidateDetails" style="margin-left:300px;">
+                <span class="glyphicon glyphicon-user"></span>Add Candidate Details
+            </button>
+        </div>
+        <br/><br/>
+        <!--<img class="card-img-top" src="images/p1.jpg" alt="Card image cap">-->
+        <img src="data:image/png;base64,{{candidateDetail.CandidateLogo}}" style="height:270px; width:300px;" class="card-img-top"/>
+        <div class="card" style="width: 57rem;margin-left:350px;margin-top:-270px;">
+            <div class="card-header">
+            </div>
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item" style="background-color:deepskyblue;"> <span style="color:black;">NAME:</span>{{candidateDetail.CandidateName}}</li>
+                <li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">EDUCATION:</span>{{candidateDetail.Education}}</li>
+                <li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">PARTY:</span>{{candidateDetail.Party}}</li>
+                <li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">CANDIDATESLOGAN:</span>{{candidateDetail.CandidateSlogan}}</li>
+                <li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">CANDIDATELOGO:</span>{{candidateDetail.CandidateLogo}}</li>
+                <li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">OFFICEADDRESS:</span>{{candidateDetail.OfficeAddress}}</li>
+            </ul>
+        </div>
+        <div style="margin-left:960px;">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addCandidateDetails">
+                <span class="glyphicon glyphicon-pencil"></span>Update
+            </button>
+            <button type="button" class="btn btn-danger" ng-click="deleteCandidateDetails()" >
+                <span class="glyphicon glyphicon-trash"></span>Delete
+            </button>
+        </div>
     </div>
-    <ul class="list-group list-group-flush">
-
-        <li class="list-group-item" style="background-color:deepskyblue;"> <span style="color:black;">NAME:</span>{{candidateDetail.CandidateName}}</li>
-        <li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">EDUCATION:</span>{{candidateDetail.Education}}</li>
-        <li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">PARTY:</span>{{candidateDetail.Party}}</li>
-        <li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">CANDIDATESLOGAN:</span>{{candidateDetail.CandidateSlogan}}</li>
-        <li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">CANDIDATELOGO:</span>{{candidateDetail.CandidateLogo}}</li>
-        <li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">OFFICEADDRESS:</span>{{candidateDetail.OfficeAddress}}</li>
-    </ul>
 </div>
 
-<div style="margin-left:960px;">
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addCandidateDetails">
-        <span class="glyphicon glyphicon-pencil"></span>update
-    </button>
-    <button type="button" class="btn btn-danger" ng-click="deleteCandidateDetails()" >
-            <span class="glyphicon glyphicon-trash"></span>delete
-    </button>
-</div>
-<br/><br/>
+
+<!--<h3 style="margin-left:470px;">CANDIDATE DETAILS</h3>-->
+<!--<br/>-->
+<!--<div style="margin-left: -301px;">-->
+    <!--<button ng-disabled="disableAddBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCandidateDetails" style="margin-left:300px;">-->
+        <!--<span class="glyphicon glyphicon-user"></span>Add Candidate Details-->
+    <!--</button>-->
+<!--</div>-->
+<!--<br/><br/>-->
+<!--&lt;!&ndash;<img class="card-img-top" src="images/p1.jpg" alt="Card image cap">&ndash;&gt;-->
+<!--<img src="data:image/png;base64,{{candidateDetail.CandidateLogo}}" style="height:270px; width:300px;" class="card-img-top"/>-->
+<!--<div class="card" style="width: 57rem;margin-left:350px;margin-top:-270px;">-->
+    <!--<div class="card-header">-->
+    <!--</div>-->
+    <!--<ul class="list-group list-group-flush">-->
+
+        <!--<li class="list-group-item" style="background-color:deepskyblue;"> <span style="color:black;">NAME:</span>{{candidateDetail.CandidateName}}</li>-->
+        <!--<li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">EDUCATION:</span>{{candidateDetail.Education}}</li>-->
+        <!--<li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">PARTY:</span>{{candidateDetail.Party}}</li>-->
+        <!--<li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">CANDIDATESLOGAN:</span>{{candidateDetail.CandidateSlogan}}</li>-->
+        <!--<li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">CANDIDATELOGO:</span>{{candidateDetail.CandidateLogo}}</li>-->
+        <!--<li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">OFFICEADDRESS:</span>{{candidateDetail.OfficeAddress}}</li>-->
+    <!--</ul>-->
+<!--</div>-->
+<!--<div style="margin-left:960px;">-->
+    <!--<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addCandidateDetails">-->
+        <!--<span class="glyphicon glyphicon-pencil"></span>update-->
+    <!--</button>-->
+    <!--<button type="button" class="btn btn-danger" ng-click="deleteCandidateDetails()" >-->
+        <!--<span class="glyphicon glyphicon-trash"></span>delete-->
+    <!--</button>-->
+<!--</div>-->
+<!--<br/><br/>-->
 
 
-<br/>
+<!--<br/>-->
 
 
 <div class="modal fade" id="addCandidateDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -3064,7 +3107,7 @@ p.est span{
 
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <h5 class="modal-title" id="exampleModalLabel">AddCandidateDetails</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -3091,9 +3134,8 @@ p.est span{
 
                 <div class="form-group">
                     <label for="recipient-name" class="form-control-label">candidateLogo:</label>
-                    <input type="file" ng-model="file" name="file" base-sixty-four-input required onload="onLoad" maxsize="500" accept="image/*" ng-model="candidateDetail.CandidateLogo">
+                    <input type="file" ng-model="file" name="file" base-sixty-four-input required onload="onLoad" maxsize="500" accept="image/*">
                     <button type="button" style="margin-left: 220px;margin-top: -47px;" class="btn btn-primary" ng-click="uploadfile(file)">Upload</button>
-
                     <!--<input type="text" class="form-control" id="recipient-logo" ng-model="CandidateDetailsdata.CandidateLogo">-->
                 </div>
                 <div class="form-group">
@@ -3110,38 +3152,46 @@ p.est span{
     </div>
 </div>
 
-
-<h3 style="margin-left:470px;">SURVIVAL DURATION</h3>
-<br/>
-<div style="margin-left: -301px;">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addsurveydetails" style="margin-left:300px;"><span class="glyphicon glyphicon-user"></span>AddSurvivalDuration</button>
-</div>
 <br/><br/>
-<img class="card-img-top" src="images/p1.jpg" alt="Card image cap">
-<div class="card" style="width: 57rem;margin-left:350px;margin-top:-210px;">
-    <div class="card-header">
+<div class="container">
+    <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="collapse" data-target="#collapse2">SURVIVAL DURATION</button>
+    <div id="collapse2" class="collapse">
+        <!--<h3 style="margin-left:470px;">SURVIVAL DURATION</h3>-->
+        <br/>
+        <div style="margin-left: -301px;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addsurveydetails" style="margin-left:300px;"><span class="glyphicon glyphicon-user"></span>AddSurvivalDuration</button>
+        </div>
+        <br/><br/>
+        <img class="card-img-top" src="images/p1.jpg" alt="Card image cap">
+        <div class="card" style="width: 57rem;margin-left:350px;margin-top:-225px;">
+            <div class="card-header">
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color:mediumspringgreen;"> <span style="color:black;">DATE:</span>{{candidateDetail.survival_info.Date}}</li>
+                <li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">CONSTITUENCY:</span>{{candidateDetail.survival_info.Constituency}}</li>
+                <li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">CONSTITUENCYDETAILS:</span>{{candidateDetail.survival_info.ConstituencyDetails}}</li>
+            </ul>
+        </div>
+        <div style="margin-left:960px;">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addsurveydetails" >
+                <span class="glyphicon glyphicon-pencil" ></span>Update
+            </button>
+            <button type="button" class="btn btn-danger" ng-click="deleteSurvivalDetails()">
+                <span class="glyphicon glyphicon-trash"></span>Delete
+            </button>
+        </div>
+
     </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item" style="background-color:mediumspringgreen;"> <span style="color:black;">DATE:</span>{{candidateDetail.survival_info.Date}}</li>
-        <li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">CONSTITUENCY:</span>{{candidateDetail.survival_info.Constituency}}</li>
-        <li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">CONSTITUENCYDETAILS:</span>{{candidateDetail.survival_info.ConstituencyDetails}}</li>
-    </ul>
 </div>
-<div style="margin-left:960px;">
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addsurveydetails" >
-        <span class="glyphicon glyphicon-pencil" ></span>update
-    </button>
-    <button type="button" class="btn btn-danger" ng-click="deleteSurvivalDetails()">
-        <span class="glyphicon glyphicon-trash"></span>delete
-    </button>
-</div>
+
+
 <br/><br/>
 
 <div class="modal fade" id="addsurveydetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">New message</h5>
+                <h5 class="modal-title" id="exampleModalLabel1">AddSurveydetails</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -3188,77 +3238,106 @@ p.est span{
 
 
 <!--<table id="customers" >-->
-    <!--<tr>-->
-        <!--<th>NAME</th>-->
-        <!--<th>EDUCATION</th>-->
-        <!--<th>PARTY</th>-->
-        <!--<th>COMPANY SLOGAN</th>-->
-        <!--<th>COMPANY LOGO</th>-->
-        <!--<th>OFFICE ADDRESS</th>-->
-        <!--<th>ACTION</th>-->
-    <!--</tr>-->
-    <!--<tr ng-repeat="candidate in CandidateDetailsdata">-->
-        <!--<td>{{candidate.CandidateName}}</td>-->
-        <!--<td>{{candidate.Education}}</td>-->
-        <!--<td>{{candidate.Party}}</td>-->
-        <!--<td>{{candidate.CandidateLogo}}</td>-->
-        <!--<td>{{candidate.CandidateSlogan}}</td>-->
-        <!--<td>{{candidate.OfficeAddress}}</td>-->
-        <!--<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>edit</button>-->
-            <!--<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>del</button>-->
-        <!--</td>-->
-    <!--</tr>-->
+<!--<tr>-->
+<!--<th>NAME</th>-->
+<!--<th>EDUCATION</th>-->
+<!--<th>PARTY</th>-->
+<!--<th>COMPANY SLOGAN</th>-->
+<!--<th>COMPANY LOGO</th>-->
+<!--<th>OFFICE ADDRESS</th>-->
+<!--<th>ACTION</th>-->
+<!--</tr>-->
+<!--<tr ng-repeat="candidate in CandidateDetailsdata">-->
+<!--<td>{{candidate.CandidateName}}</td>-->
+<!--<td>{{candidate.Education}}</td>-->
+<!--<td>{{candidate.Party}}</td>-->
+<!--<td>{{candidate.CandidateLogo}}</td>-->
+<!--<td>{{candidate.CandidateSlogan}}</td>-->
+<!--<td>{{candidate.OfficeAddress}}</td>-->
+<!--<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>edit</button>-->
+<!--<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>del</button>-->
+<!--</td>-->
+<!--</tr>-->
 <!--</table>-->
 
 <!--<table id="customers">-->
-    <!--<tr>-->
-        <!--<th>Date</th>-->
-        <!--<th>Constituency</th>-->
-        <!--<th>ConstituencyDetails</th>-->
-        <!--<th>Action</th>-->
-    <!--</tr>-->
-    <!--<tr ng-repeat="candidate in CandidateDetailsdata">-->
-        <!--<td>{{candidate.survival_info.Date}}</td>-->
-        <!--<td>{{candidate.survival_info.Constituency}}</td>-->
-        <!--<td>{{candidate.survival_info.ConstituencyDetails}}</td>-->
-        <!--<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>edit</button>-->
-            <!--<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>del</button>-->
+<!--<tr>-->
+<!--<th>Date</th>-->
+<!--<th>Constituency</th>-->
+<!--<th>ConstituencyDetails</th>-->
+<!--<th>Action</th>-->
+<!--</tr>-->
+<!--<tr ng-repeat="candidate in CandidateDetailsdata">-->
+<!--<td>{{candidate.survival_info.Date}}</td>-->
+<!--<td>{{candidate.survival_info.Constituency}}</td>-->
+<!--<td>{{candidate.survival_info.ConstituencyDetails}}</td>-->
+<!--<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>edit</button>-->
+<!--<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>del</button>-->
 
-        <!--</td>-->
+<!--</td>-->
 
-    <!--</tr>-->
+<!--</tr>-->
 <!--</table>-->
 
-<h3 style="margin-left:470px;">ELECTION HISTORY</h3>
-<br/>
-<div style="margin-left: -301px;">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addelectiondetails" style="margin-left:300px;">AddElectionHistory</button>
-</div>
-<br/><br/>
-<img class="card-img-top" src="images/p1.jpg" alt="Card image cap">
-<div class="card" style="width: 57rem;margin-left:350px;margin-top:-210px;">
-    <div class="card-header">
+<div class="container">
+    <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="collapse" data-target="#collapse3">ELECTION HISTORY</button>
+    <div id="collapse3" class="collapse">
+        <!--<h3 style="margin-left:470px;">ELECTION HISTORY</h3>-->
+        <br/>
+        <div style="margin-left: -301px;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addelectiondetails" style="margin-left:300px;">AddElectionHistory</button>
+        </div>
+        <br/><br/>
+        <img class="card-img-top" src="images/p1.jpg" alt="Card image cap">
+        <div class="card" style="width: 57rem;margin-left:350px;margin-top:-225px;">
+            <div class="card-header">
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color:deepskyblue;"> <span style="color:black;">NUMBEROFYEARS:</span>{{candidateDetail.Election_history.year}}</li>
+                <li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">DETAILS:</span>{{candidateDetail.Election_history.details}}</li>
+            </ul>
+        </div>
+        <div style="margin-left:960px;">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addelectiondetails">
+                <span class="glyphicon glyphicon-pencil"></span>Update
+            </button>
+            <button type="button" class="btn btn-danger" ng-click="deleteElectionHistoryDetails()">
+                <span class="glyphicon glyphicon-trash"></span>Delete
+            </button>
+        </div>
     </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item" style="background-color:deepskyblue;"> <span style="color:black;">NUMBEROFYEARS:</span>{{candidateDetail.Election_history.year}}</li>
-        <li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">DETAILS:</span>{{candidateDetail.Election_history.details}}</li>
-    </ul>
 </div>
-<div style="margin-left:960px;">
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addelectiondetails">
-        <span class="glyphicon glyphicon-pencil"></span>update
-    </button>
-    <button type="button" class="btn btn-danger" ng-click="deleteElectionHistoryDetails()">
-        <span class="glyphicon glyphicon-trash"></span>delete
-    </button>
-</div>
-<br/><br/>
+
+<!--<h3 style="margin-left:470px;">ELECTION HISTORY</h3>-->
+<!--<br/>-->
+<!--<div style="margin-left: -301px;">-->
+    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addelectiondetails" style="margin-left:300px;">AddElectionHistory</button>-->
+<!--</div>-->
+<!--<br/><br/>-->
+<!--<img class="card-img-top" src="images/p1.jpg" alt="Card image cap">-->
+<!--<div class="card" style="width: 57rem;margin-left:350px;margin-top:-225px;">-->
+    <!--<div class="card-header">-->
+    <!--</div>-->
+    <!--<ul class="list-group list-group-flush">-->
+        <!--<li class="list-group-item" style="background-color:deepskyblue;"> <span style="color:black;">NUMBEROFYEARS:</span>{{candidateDetail.Election_history.year}}</li>-->
+        <!--<li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">DETAILS:</span>{{candidateDetail.Election_history.details}}</li>-->
+    <!--</ul>-->
+<!--</div>-->
+<!--<div style="margin-left:960px;">-->
+    <!--<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addelectiondetails">-->
+        <!--<span class="glyphicon glyphicon-pencil"></span>update-->
+    <!--</button>-->
+    <!--<button type="button" class="btn btn-danger" ng-click="deleteElectionHistoryDetails()">-->
+        <!--<span class="glyphicon glyphicon-trash"></span>delete-->
+    <!--</button>-->
+<!--</div>-->
+<!--<br/><br/>-->
 
 <div class="modal fade" id="addelectiondetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2 " aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel2">New message</h5>
+                <h5 class="modal-title" id="exampleModalLabel2">AddElectionDetails</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -3286,19 +3365,19 @@ p.est span{
 
 
 <!--<table id="customers" >-->
-    <!--<tr>-->
-        <!--<th>Years</th>-->
-        <!--<th>Details</th>-->
-        <!--<th>Action</th>-->
-    <!--</tr>-->
-    <!--<tr ng-repeat="candidate in CandidateDetailsdata">-->
-        <!--<td>{{candidate.Election_history.year}}</td>-->
-        <!--<td>{{candidate.Election_history.details}}</td>-->
-        <!--<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>edit</button>-->
-            <!--<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>delete</button>-->
-        <!--</td>-->
+<!--<tr>-->
+<!--<th>Years</th>-->
+<!--<th>Details</th>-->
+<!--<th>Action</th>-->
+<!--</tr>-->
+<!--<tr ng-repeat="candidate in CandidateDetailsdata">-->
+<!--<td>{{candidate.Election_history.year}}</td>-->
+<!--<td>{{candidate.Election_history.details}}</td>-->
+<!--<td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>edit</button>-->
+<!--<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>delete</button>-->
+<!--</td>-->
 
-    <!--</tr>-->
+<!--</tr>-->
 <!--</table>-->
 
 
@@ -3487,264 +3566,264 @@ p.est span{
 </div>
 
 <!--<div class="wlcome" style="margin-top: -125px;" >-->
-    <!--<h3 style="margin-left: 470px;">ELECTION EVENTS</h3>-->
+<!--<h3 style="margin-left: 470px;">ELECTION EVENTS</h3>-->
 <!--<br/>-->
-    <!--<div class="container">-->
-        <!--<div class="wlcome-grids">-->
-            <!--<div class="col-md-7 wlcome-grid-left">-->
-                <!--<div class="video">-->
-                    <!--<h4>Election Video</h4>-->
-                    <!--<iframe src="https://player.vimeo.com/video/61220793?color=ffffff&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
-                <!--</div>-->
-                <!--&lt;!&ndash;<div class="election_grid">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<h3>about candidate</h3>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p class="nihil">candidate details</p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >Add  candidate details</button>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<div class="wlcome-grid-left-grid"  ng-repeat="canvas in canvasList">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div class="col-xs-8 wlcome-grid-left-grid">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<h4>{{canvas.title}}</h4>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<p>{{canvas.description}}</p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div class="col-xs-4 wlcome-grid-left-grid">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<img src="{{canvas.image}}" alt=" " class="img-responsive">&ndash;&gt;-->
-                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                    <!--&lt;!&ndash;&lt;!&ndash;<div class="wlcome-grid-left-grid">&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;<div class="col-xs-8 wlcome-grid-left-grid">&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<h4>vel illum qui dolorem eum fugiat</h4>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<p>Quis autem vel eum iure reprehenderit qui in ea voluptate&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;velit esse quam nihil molestiae consequatur, vel illum qui dolorem&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;eum fugiat quo voluptas nulla pariatur.</p>&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;<div class="col-xs-4 wlcome-grid-left-grid fgh">&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<img src="images/p2.jpg" alt=" " class="img-responsive">&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;&ndash;&gt;-->
-                    <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;<div class="services">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<h2>Services For Our Country !</h2>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p class="nihil">When a politician with good intentions disappear politics.</p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<h5>Quis autem vel eum iure reprehenderit qui in ea voluptate&ndash;&gt;-->
-                        <!--&lt;!&ndash;velit esse quam nihil molestiae consequatur, vel illum qui dolorem&ndash;&gt;-->
-                        <!--&lt;!&ndash;eum fugiat quo voluptas nulla pariatur.</h5>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >Add New Services</button>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<div class="banner-bottom-video-grid-left">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="panel panel-default" ng-repeat="canvas in canvasList">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<div class="panel-heading" role="tab" id="headingOne">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>{{canvas.title}}&ndash;&gt;-->
-                                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</h4>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="panel-body">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;{{canvas.description}}&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingTwo">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">&ndash;&gt;&ndash;&gt;-->
-                                            <!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Itaque earum rerum&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingThree">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">&ndash;&gt;&ndash;&gt;-->
-                                            <!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>autem accusamus terry richa quibusdam&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingFour">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">&ndash;&gt;&ndash;&gt;-->
-                                            <!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>excepturi sint cliche reprehenderit&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingFive">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">&ndash;&gt;&ndash;&gt;-->
-                                            <!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>voluptatum deleniti enim eiusmod high&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingSix">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">&ndash;&gt;&ndash;&gt;-->
-                                            <!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>autem enim eiusmod high quibusdam&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingSeven">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">&ndash;&gt;&ndash;&gt;-->
-                                            <!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>excepturi accusamus terry richardson&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingEight">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">&ndash;&gt;&ndash;&gt;-->
-                                            <!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>excepturi cupidatat skateboard sint&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;<div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
-                                        <!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
-                                    <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
-                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--</div>-->
-            <!--<div class="col-md-5 wlcome-grid-right" style="margin-top:50px;">-->
-                <!--&lt;!&ndash;<div class="sap_tabs">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<ul class="resp-tabs-list">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<li class="resp-tab-item grid1 resp-tab-active" aria-controls="tab_item-0" role="tab"><span>2014 Nominees</span></li>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab"><span>2015 Nominees</span></li>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="clear"></div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<div class="resp-tabs-container">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<img src="images/1.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<p>October 3,2015 <span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<img src="images/2.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<p>October 9,2015<span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<img src="images/3.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<p>October 15,2015<span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<img src="images/4.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<p>October 23,2015<span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<img src="images/1.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<p>October 28,2015<span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<img src="images/2.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<p>October 31,2015<span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<div class="container">-->
+<!--<div class="wlcome-grids">-->
+<!--<div class="col-md-7 wlcome-grid-left">-->
+<!--<div class="video">-->
+<!--<h4>Election Video</h4>-->
+<!--<iframe src="https://player.vimeo.com/video/61220793?color=ffffff&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+<!--</div>-->
+<!--&lt;!&ndash;<div class="election_grid">&ndash;&gt;-->
+<!--&lt;!&ndash;<h3>about candidate</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;<p class="nihil">candidate details</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >Add  candidate details</button>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="wlcome-grid-left-grid"  ng-repeat="canvas in canvasList">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-xs-8 wlcome-grid-left-grid">&ndash;&gt;-->
+<!--&lt;!&ndash;<h4>{{canvas.title}}</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>{{canvas.description}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-xs-4 wlcome-grid-left-grid">&ndash;&gt;-->
+<!--&lt;!&ndash;<img src="{{canvas.image}}" alt=" " class="img-responsive">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="wlcome-grid-left-grid">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="col-xs-8 wlcome-grid-left-grid">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<h4>vel illum qui dolorem eum fugiat</h4>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<p>Quis autem vel eum iure reprehenderit qui in ea voluptate&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;velit esse quam nihil molestiae consequatur, vel illum qui dolorem&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;eum fugiat quo voluptas nulla pariatur.</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="col-xs-4 wlcome-grid-left-grid fgh">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<img src="images/p2.jpg" alt=" " class="img-responsive">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="services">&ndash;&gt;-->
+<!--&lt;!&ndash;<h2>Services For Our Country !</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;<p class="nihil">When a politician with good intentions disappear politics.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<h5>Quis autem vel eum iure reprehenderit qui in ea voluptate&ndash;&gt;-->
+<!--&lt;!&ndash;velit esse quam nihil molestiae consequatur, vel illum qui dolorem&ndash;&gt;-->
+<!--&lt;!&ndash;eum fugiat quo voluptas nulla pariatur.</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >Add New Services</button>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="banner-bottom-video-grid-left">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="panel panel-default" ng-repeat="canvas in canvasList">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="panel-heading" role="tab" id="headingOne">&ndash;&gt;-->
+<!--&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;-->
+<!--&lt;!&ndash;<a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>{{canvas.title}}&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="panel-body">&ndash;&gt;-->
+<!--&lt;!&ndash;{{canvas.description}}&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingTwo">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Itaque earum rerum&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingThree">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>autem accusamus terry richa quibusdam&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingFour">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>excepturi sint cliche reprehenderit&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingFive">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>voluptatum deleniti enim eiusmod high&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingSix">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>autem enim eiusmod high quibusdam&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingSeven">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>excepturi accusamus terry richardson&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel panel-default">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-heading" role="tab" id="headingEight">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<h4 class="panel-title">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>excepturi cupidatat skateboard sint&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</h4>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div class="panel-body">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--</div>-->
+<!--<div class="col-md-5 wlcome-grid-right" style="margin-top:50px;">-->
+<!--&lt;!&ndash;<div class="sap_tabs">&ndash;&gt;-->
+<!--&lt;!&ndash;<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">&ndash;&gt;-->
+<!--&lt;!&ndash;<ul class="resp-tabs-list">&ndash;&gt;-->
+<!--&lt;!&ndash;<li class="resp-tab-item grid1 resp-tab-active" aria-controls="tab_item-0" role="tab"><span>2014 Nominees</span></li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab"><span>2015 Nominees</span></li>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="clear"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="resp-tabs-container">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
+<!--&lt;!&ndash;<img src="images/1.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>October 3,2015 <span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
+<!--&lt;!&ndash;<img src="images/2.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>October 9,2015<span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
+<!--&lt;!&ndash;<img src="images/3.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>October 15,2015<span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
+<!--&lt;!&ndash;<img src="images/4.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>October 23,2015<span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
+<!--&lt;!&ndash;<img src="images/1.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>October 28,2015<span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="facts">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list">&ndash;&gt;-->
+<!--&lt;!&ndash;<img src="images/2.jpg" alt=" " class="img-responsive">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="tab_list1">&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#">excepturi sint occaecati</a>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>October 31,2015<span>Nam libero tempore, cum soluta nobis.</span></p>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;<div class="video">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<h4>Election Video</h4>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<iframe src="https://player.vimeo.com/video/61220793?color=ffffff&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--<div class="upcoming">-->
-                    <!--<h4>Upcoming Events </h4>-->
-                    <!--<ul ng-repeat="canvas in canvasList">-->
-                        <!--<li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">{{canvas.title}}</a><span>{{canvas.description}}</span></li>-->
-                        <!--&lt;!&ndash;<li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Praesent vitae eros eget.</a><span>December 20, 2015</span></li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">rutrum sed sem quis venenatis.</a><span>December 25, 2015</span></li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">eros eget tellus tristique bibendum.</a><span>December 28, 2015</span></li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">excepturi sint occaecati.</a><span>January 3, 2016</span></li>&ndash;&gt;-->
-                    <!--</ul>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<br/>-->
-            <!--<button style="margin-left:680px;margin-top: 15px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >Add upcoming events</button>-->
-            <!--<div class="clearfix"> </div>-->
-        <!--</div>-->
-    <!--</div>-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="video">&ndash;&gt;-->
+<!--&lt;!&ndash;<h4>Election Video</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;<iframe src="https://player.vimeo.com/video/61220793?color=ffffff&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<div class="upcoming">-->
+<!--<h4>Upcoming Events </h4>-->
+<!--<ul ng-repeat="canvas in canvasList">-->
+<!--<li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">{{canvas.title}}</a><span>{{canvas.description}}</span></li>-->
+<!--&lt;!&ndash;<li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Praesent vitae eros eget.</a><span>December 20, 2015</span></li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">rutrum sed sem quis venenatis.</a><span>December 25, 2015</span></li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">eros eget tellus tristique bibendum.</a><span>December 28, 2015</span></li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">excepturi sint occaecati.</a><span>January 3, 2016</span></li>&ndash;&gt;-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--<br/>-->
+<!--<button style="margin-left:680px;margin-top: 15px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >Add upcoming events</button>-->
+<!--<div class="clearfix"> </div>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>-->
 
 <!--<input type="file"  ng-model="file" name="file" base-sixty-four-input>-->

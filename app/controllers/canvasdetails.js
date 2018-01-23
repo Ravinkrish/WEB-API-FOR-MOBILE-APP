@@ -158,10 +158,8 @@ CanvasDetailsModel.findOne({"_id":req.params.canvasMongoId},function(err,result)
 
 //updateMoreImages
 router.post('/updateMoreImagedata/:mongoid/:filename',function(req,res){
-console.log("GFDSA");
-console.log(req.params.mongoid);
-console.log(req.params.filename)
-CanvasDetailsModel.findOneAndUpdate({_id:req.params.mongoid},{$push:{CanvasMoreImages:req.params.filename}},function(err,result){
+CanvasDetailsModel.findOneAndUpdate({_id:req.params.mongoid},
+{$push:{CanvasMoreImages:req.body.fileObj}},function(err,result){
                     if(err)
                         {
                          console.log(err.stack)

@@ -79,7 +79,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--</div>-->
 <!-- //end-header -->
 <!-- banner1 -->
-	<div class="banner1" style="width: 1423px; margin-left: -142px;">
+	<div class="banner1" style="width: 1423px; margin-left: -142px; min-height:400px;">
 		<div class="container">
 			<div class="banner1-info">
 				<h3>It has survived not only five centuries, but also the leap 
@@ -89,38 +89,78 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 <!-- //banner1 -->
-<!-- contact -->
-{{contactDetail}}
-	<div class="contact">
-		<div class="container">
-			<h3>Contact Us</h3>
-			<p class="nihil">Vote For Real Government.</p>
-			<div class="contact-grid">
-				<div class="col-md-5 contact-left">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3056.9443837127305!2d-75.7983021!3d39.9873482!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x69c9c879a1263188!2sLutheran+Church+of+the+Good+Shepherd!5e0!3m2!1sen!2sin!4v1426659332982" frameborder="0" style="border:0"></iframe>
+<div class="contact-bottom">
+	<div class="container">
+		<div class="contact-bottom-grids">
+			<p>But I must explain to you how all this mistaken idea of denouncing
+				pleasure and praising pain was born and I will give you a complete
+				account of the system, and expound the actual teachings of the great
+				explorer of the truth, the master-builder of human happiness.
+				No one rejects, dislikes, or avoids pleasure itself, because it is pleasure,
+				but because those who do not know how to pursue pleasure rationally
+				encounter consequences that are extremely painful.</p>
+			<div class="col-md-4 contact-bottom-grid">
+				<div class="dot">
+					<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
 				</div>
-				<div class="col-md-7 contact-right">
-					<form>
-						<input type="text" placeholder="Name" required=" " ng-model="contactDetails.Name">
-						<input type="text" placeholder="Email Address" required=" "ng-model="contactDetails.EmailAddress">
-						<input type="text" placeholder="Phone Number" required=" "ng-model="contactDetails.PhoneNumber">
-						<input type="text" placeholder="Subject" required=" "ng-model="contactDetails.Subject">
-						<div class="clearfix"> </div>
-						<textarea placeholder="Type Your Address Here...." required=" "ng-model="contactDetails.OfficeAddress"></textarea>
-						<input type="submit" value="Submit" ng-click="saveContactDetails()">
-						<input type="reset" value="Clear">
-					</form>
-				</div>
-
-				<div class="clearfix"> </div>
+				<h4>{{contactDetail.OfficeAddress}}<span></span></h4>
 			</div>
+			<div class="col-md-4 contact-bottom-grid">
+				<div class="dot">
+					<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+				</div>
+				<a href="mailto:info@example.com">{{contactDetail.EmailAddress}}</a>
+			</div>
+			<div class="col-md-4 contact-bottom-grid">
+				<div class="dot">
+					<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+				</div>
+				<h4>{{contactDetail.PhoneNumber}}</h4>
+			</div>
+			<div class="clearfix"> </div>
 		</div>
 	</div>
+</div>
+
+<!-- contact -->
+<div class="container">
+
+	<button type="button" class="btn btn-success btn-lg btn-block" data-toggle="collapse" data-target="#demo">ADD CONTACT DETAILS</button>
+	<div id="demo" class="collapse">
+		<div class="contact">
+			<div class="container">
+				<h3>Contact Us</h3>
+				<p class="nihil">Vote For Real Government.</p>
+				<div class="contact-grid">
+					<div class="col-md-5 contact-left">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3056.9443837127305!2d-75.7983021!3d39.9873482!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x69c9c879a1263188!2sLutheran+Church+of+the+Good+Shepherd!5e0!3m2!1sen!2sin!4v1426659332982" frameborder="0" style="border:0"></iframe>
+					</div>
+					<div class="col-md-7 contact-right">
+						<form>
+							<input type="text" placeholder="Name" required=" " ng-model="contactDetails.Name">
+							<input type="text" placeholder="Email Address" required=" "ng-model="contactDetails.EmailAddress">
+							<input type="text" placeholder="Phone Number" required=" "ng-model="contactDetails.PhoneNumber">
+							<input type="text" placeholder="Subject" required=" "ng-model="contactDetails.Subject">
+							<div class="clearfix"> </div>
+							<textarea placeholder="Type Your Address Here...." required=" "ng-model="contactDetails.OfficeAddress"></textarea>
+							<input type="submit" value="Submit" ng-click="saveContactDetails()">
+							<input type="reset" value="Clear">
+						</form>
+					</div>
+
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<br/><br/><br/>
 <div class="card" style="width: 60rem;margin-left:130px;margin-top:-40px;">
 	<div class="card-header">
 	</div>
 	<ul class="list-group list-group-flush">
-
 		<li class="list-group-item" style="background-color:deepskyblue;"> <span style="color:black;">Name:</span>{{contactDetail.Name}}</li>
 		<li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">EmailAddress:</span>{{contactDetail.EmailAddress}}</li>
 		<li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">PhoneNumber:</span>{{contactDetail.PhoneNumber}}</li>
@@ -134,97 +174,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</button>
 </div>
 
-	<div class="contact-bottom">
-		<div class="container">
-			<div class="contact-bottom-grids">
-				<p>But I must explain to you how all this mistaken idea of denouncing 
-					pleasure and praising pain was born and I will give you a complete 
-					account of the system, and expound the actual teachings of the great 
-					explorer of the truth, the master-builder of human happiness. 
-					No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, 
-					but because those who do not know how to pursue pleasure rationally 
-					encounter consequences that are extremely painful.</p>
-				<div class="col-md-4 contact-bottom-grid">
-					<div class="dot">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-					</div>
-					<h4>JI.Paulnadwam 2nd D.No:23-50-903.<span>United States</span></h4>
-				</div>
-				<div class="col-md-4 contact-bottom-grid">
-					<div class="dot">
-						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-					</div>
-					<a href="mailto:info@example.com">info@example.com</a>
-				</div>
-				<div class="col-md-4 contact-bottom-grid">
-					<div class="dot">
-						<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-					</div>
-					<h4>+020 456 9696</h4>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
 
-
-<div class="card" style="width: 57rem;margin-left:350px;margin-top:-210px;">
-	<div class="card-header">
-	</div>
-	<ul class="list-group list-group-flush">
-
-		<li class="list-group-item" style="background-color:deepskyblue;"> <span style="color:black;">Name:</span>{{contactDetail.Name}}</li>
-		<li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">EmailAddress:</span>{{contactDetail.EmailAddress}}</li>
-		<li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">PhoneNumber:</span>{{contactDetail.PhoneNumber}}</li>
-		<li class="list-group-item" style="background-color:gold;"><span style="color:darkblue">Subject:</span>{{contactDetail.Subject}}</li>
-		<li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">OfficeAddress:</span>{{contactDetail.OfficeAddress}}</li>
-	</ul>
-</div>
 
 <!-- //contact -->
 <!-- footer-top -->
-	<div class="footer-top">
-		<div class="container">
-			<div class="footer-grids">
-				<figure class="effect-winston">
-					<img src="images/1.jpg" alt="" class="img-responsive one" />
-					<figcaption> 
-						<h2>Jolly <span>Winston</span></h2>
-						<p>There are many variations of passages of Lorem Ipsum available.</p>
-						<ul class="social_icons">
-							<li><a href="#" class="f1"></a></li>
-							<li><a href="#" class="f2"></a></li>
-							<li><a href="#" class="f3"></a></li>
-						</ul>
-					</figcaption>			
-				</figure>
-				<figure class="effect-winston">
-					<img src="images/3.jpg" alt="" class="img-responsive one" />
-					<figcaption>
-						<h2>Micheal <span>James</span></h2>
-						<p>There are many variations of passages of Lorem Ipsum available.</p>
-						<ul class="social_icons">
-							<li><a href="#" class="f1"></a></li>
-							<li><a href="#" class="f2"></a></li>
-							<li><a href="#" class="f3"></a></li>
-						</ul>
-					</figcaption>			
-				</figure>
-				<figure class="effect-winston">
-					<img src="images/5.jpg" alt="" class="img-responsive one" />
-					<figcaption>
-						<h2>Adom <span>Williums</span></h2>
-						<p>There are many variations of passages of Lorem Ipsum available.</p>
-						<ul class="social_icons">
-							<li><a href="#" class="f1"></a></li>
-							<li><a href="#" class="f2"></a></li>
-							<li><a href="#" class="f3"></a></li>
-						</ul>
-					</figcaption>			
-				</figure>
-			</div>
-		</div>
-	</div>
 <!-- //footer-top -->
 <!-- footer -->
 	<!--<div class="footer">-->

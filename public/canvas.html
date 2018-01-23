@@ -22,7 +22,15 @@
     color: white;
 }
 </style>
-
+<div class="banner1" style="width: 1423px; margin-left: -142px; min-height: 400px;">
+    <div class="container">
+        <div class="banner1-info">
+            <h3>It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s.</h3>
+        </div>
+    </div>
+</div>
 <br/><br/><br/><br/><br/>
 <div class="col-md-3 col-sm-3 col-xs-8 form-group pull-right top_search">
     <div class="input-group">
@@ -37,12 +45,13 @@
     <br/><br/>
     <tr>
         <th>Title</th>
-        <th>date</th>
+        <th>Date</th>
         <!--<th>Time</th>-->
-        <th>address</th>
+        <th>Address</th>
         <th>Description</th>
         <th>Expected Crowd</th>
         <th>OtherChiefGuest</th>
+        <th>Guestdetails</th>
         <th>Action</th>
     </tr>
     <tr dir-paginate="canvas in canvasList|filter:searchtext|itemsPerPage:3">
@@ -53,13 +62,17 @@
         <td>{{canvas.Description}}</td>
         <td>{{canvas.ExpectedGrowth}}</td>
         <td>{{canvas.OtherChiefGuest}}</td>
-        <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" ng-click="showEditForm(); getCanvas(canvas._id)" >
-            <span class="glyphicon glyphicon-pencil"></span>update
+        <td>{{canvas.GuestDetails}}</td>
+        <!--<td>-->
+            <!--<img src="data:image/png;base64,{{canvas.CanvasMoreImages[0]}}" style="height:100px; width:100px;">-->
+        <!--</td>-->
+        <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal" ng-click="showEditForm(); getCanvas(canvas._id)" >
+            <span class="glyphicon glyphicon-pencil"></span>Update
             </button>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ng-click="openDeleteModal(canvas._id);">
-                <span class="glyphicon glyphicon-trash" ></span>delete
+            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" ng-click="openDeleteModal(canvas._id);">
+                <span class="glyphicon glyphicon-trash" ></span>Del
             </button>
-            <button type="button" class="btn btn-primary" ng-click="uploadMoreImages(canvas._id)">upload more images
+            <button type="button" class="btn btn-primary btn-sm " ng-click="uploadMoreImages(canvas._id)">Upload images
             </button>
 
         </td>
@@ -74,7 +87,7 @@
                          boundary-links="true" >
 </dir-pagination-controls>
 <div ng-hide="true">
-    <input id="uploadBtn" type="file" class="upload" file-model="myFile">
+    <input id="uploadBtn" type="file" class="upload" ng-model="myFile" base-sixty-four-input>
     <button style="color:black;" ng-click="upload()" id="upload">Upload Logo</button>
 </div>
 <div class="modal fade" id="myModal" role="dialog">
@@ -174,6 +187,10 @@
                     <div class="form-group">
                         <label for="recipient-name" class="form-control-label">OtherChiefGuest:</label>
                         <input type="text" class="form-control" id="recipient-guest" ng-model="canvas.OtherChiefGuest">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="form-control-label">Guestdetails:</label>
+                        <textarea class="form-control" id="message-details" ng-model="canvas.GuestDetails"></textarea>
                     </div>
                 </form>
             </div>

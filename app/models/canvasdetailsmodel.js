@@ -9,9 +9,8 @@ var ElectionResultSchema = new mongoose.Schema(
     Description:String,
     ExpectedGrowth:String,
     OtherChiefGuest:String,
+    GuestDetails:String,
     CanvasMoreImages:[]
-
-
 },
 {collection:"Canvas"});
 mongoose.model('Canvas',ElectionResultSchema);

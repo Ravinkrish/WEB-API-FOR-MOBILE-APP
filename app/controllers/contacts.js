@@ -68,6 +68,19 @@ function(err,result)
 })
 
 
+router.delete('/deleteContact' ,function(req, res, next){
+    ContactDetailsModel.remove({},function(err,result){
+        if(err){
+            console.log(err.stack)
+        }
+        else{
+            res.send(result)
+        }
+    });
+});
+
+
+
 router.delete('/contactBymongoId/:contactMongoid',function(req, res, next){
 ContactDetailsModel.remove({"_id":req.params.contactMongoid},function(err,result)
 {

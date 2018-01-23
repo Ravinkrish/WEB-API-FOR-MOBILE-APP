@@ -286,6 +286,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" ng-click="showAddForm()" style="margin-left:300px;">AddEventDetails</button>
 </div>
 <br/>
+{{eventList}}
 <table id="customers">
 	<tr>
 		<th>EventName</th>
@@ -294,6 +295,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<th>Noofpeoples</th>
 		<th>Eventcost</th>
 		<th>EventAddress</th>
+		<th>EventBrochures</th>
 		<th>Action</th>
 	</tr>
 	<tr dir-paginate="event in eventList|filter:searchtext|itemsPerPage:3">
@@ -303,13 +305,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<td>{{event.Noofpeoples}}</td>
 		<td>{{event.EventCost}}</td>
 		<td>{{event.EventDetails}}</td>
-		<td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" ng-click="showEditForm(); getEvent(event._id)">
+		<td><img src="data:image/gif;base64,{{event.EventBrochures}}" style="height:50px; width:50px;" class="card-img-top"/></td>
+		<td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal" ng-click="showEditForm(); getEvent(event._id)">
 			<span class="glyphicon glyphicon-pencil"></span>update
 		    </button>
-			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal"  ng-click="openDeleteModal(event._id);">
+			<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal"  ng-click="openDeleteModal(event._id);">
 				<span class="glyphicon glyphicon-trash"></span>del
 			</button>
-			<button type="button" class="btn btn-primary" ng-click="uploadMoreImages(event._id)">upload more images
+			<button type="button" class="btn btn-primary btn-sm" ng-click="uploadMoreImages(event._id)">upload more images
 			</button>
 
 		</td>
@@ -396,6 +399,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<label for="message-text" class="col-form-label">EventDetails:</label>
 						<textarea class="form-control" id="message-text" ng-model="event.EventDetails"></textarea>
 					</div>
+					<div class="form-group">
+						<label for="recipient-name" class="form-control-label">EventBrochure:</label>
+						<input type="file" ng-model="file" name="file" base-sixty-four-input required onload="onLoad" maxsize="500" accept="image/*">
+						<button type="button" style="margin-left: 220px;margin-top: -47px;" class="btn btn-primary" ng-click="uploadfile(file)">Upload</button>
+						<!--<input type="text" class="form-control" id="recipient-logo" ng-model="CandidateDetailsdata.CandidateLogo">-->
+					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
@@ -406,6 +415,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 </div>
+
+
 
 
 

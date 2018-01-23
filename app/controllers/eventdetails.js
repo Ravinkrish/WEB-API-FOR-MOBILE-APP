@@ -38,6 +38,7 @@ newEventDetailsModel.productOfferId=1;
 });
 
 
+
 router.get('/AllEventDetails', function(req, res, next) {
 EventDetailsModel.find({},function(err,result){
         if(err){

@@ -1,4 +1,5 @@
 webapp.factory('EventServices',function($http){
+var logodata;
 
  var getAllEvent=function()
     {
@@ -42,6 +43,16 @@ webapp.factory('EventServices',function($http){
       return $http.post('/updateMoreImageDetails/'+mongoid+'/'+filename);
     }
 
+ var setEventBrochuresImages=function(logo)
+     {
+ //        console.log(logo);
+     logodata=logo;
+     }
+     var getEventBrochuresImages=function()
+     {
+     return logodata;
+     }
+
       return{
       getAllEvent:getAllEvent,
       postAllEventDetails:postAllEventDetails,
@@ -50,7 +61,9 @@ webapp.factory('EventServices',function($http){
       getEvent:getEvent,
       setProductImages:setProductImages,
       getProductImage:getProductImage,
-      updateMoreImages:updateMoreImages
+      updateMoreImages:updateMoreImages,
+      setEventBrochuresImages:setEventBrochuresImages,
+      getEventBrochuresImages:getEventBrochuresImages
 
 }
 

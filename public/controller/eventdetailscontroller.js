@@ -1,4 +1,4 @@
-webapp.controller("EventCtrl",function($scope,EventServices,$timeout,fileUpload){
+webapp.controller("EventCtrl",function($scope,EventServices,fileUpload,$timeout){
     $scope.event = {};
     $scope.deleteEventId = null;
 
@@ -22,6 +22,7 @@ webapp.controller("EventCtrl",function($scope,EventServices,$timeout,fileUpload)
  //   save all events
      $scope.saveDetails=function()
      {
+         $scope.eventList.EventBrochures = EventServices.getEventBrochuresImages();
          EventServices.postAllEventDetails($scope.event)
              .then(function (resultDetails)
              {
@@ -92,6 +93,7 @@ console.log(file)
  var filess = $('#uploadBtn')[0].files[0]
          console.log(filess)
         fileUpload.uploadFileToUrl(filess).then(function (response) {
+        alert("image uploaded")
         console.log(response.data);
         var filedata=response.data;
         if (filedata){
@@ -105,16 +107,16 @@ console.log(file)
 
 };
 
-$scope.uploadfile=function(fliedata)
-{
-console.log(fliedata);
-console.log("i am here")
-var data;
-data=fliedata.base64;
-//console.log(data);
-EventServices.setProductImages(data);
-
-}
+//$scope.uploadfile=function(fliedata)
+//{
+//console.log(fliedata);
+//console.log("i am here")
+////var data;
+//data=fliedata.base64;
+////console.log(data);
+//EventServices.setProductImages(data);
+//
+//}
 var imagearrayid;
 $scope.uploadMoreImages=function(id)
 {
@@ -130,6 +132,20 @@ console.log("somethiggggggggggggggggggggggg");
 $("#upload").click();
 }
 
+
+$scope.uploadfile=function(fliedata)
+{
+console.log(fliedata);
+//console.log(fliedata);
+//console.log("i am here")
+//var data;
+data=fliedata.base64;
+//console.log(data);
+EventServices.setEventBrochuresImages(data);
+}
+
+
+
 angular.element( document.querySelector('.upload') ).change(function() {
  $timeout(function () {
       $scope.upload();
@@ -137,9 +153,9 @@ angular.element( document.querySelector('.upload') ).change(function() {
 
 });
 
-
-
-
-//unwanted codes
+function init(){
   $scope.getAllEvent();
+}
+init()
+//unwanted codes
 });

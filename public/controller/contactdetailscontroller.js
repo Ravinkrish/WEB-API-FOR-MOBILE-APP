@@ -31,7 +31,6 @@ $scope.saveContactDetails = function(){
 // Delete Contact
 $scope.deleteContactDetails=function(){
     ContactServices.deleteContact().then(function (resultDetails) {
-        $scope.disableAddBtn = false;
         $scope.getContactDetail();
     });
 }
@@ -79,17 +78,17 @@ $scope.deleteElectionHistoryDetails=function(){
  };
 
 
-$scope.uploadfile=function(fliedata)
-{
-console.log(fliedata);
+//$scope.uploadfile=function(fliedata)
+//{
 //console.log(fliedata);
-//console.log("i am here")
-//var data;
-data=fliedata.base64;
-//console.log(data);
-ContactServices.setCompanyLogoImages(data);
-}
-
+////console.log(fliedata);
+////console.log("i am here")
+////var data;
+//data=fliedata.base64;
+////console.log(data);
+//ContactServices.setCompanyLogoImages(data);
+//}
+//
 
 
 
