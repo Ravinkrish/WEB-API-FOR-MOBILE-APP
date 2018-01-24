@@ -70,12 +70,18 @@ webapp.controller("CanvasCtrl",function($scope,CanvasServices,$timeout,fileUploa
     };
 
 
+$scope.setSlideImages = function(images){
+    $scope.slideImages = images;
+}
+
+
 $scope.files = [];
 $scope.upload=function(){
  var file=$scope.myFile;
 
  var filess = $('#uploadBtn')[0].files[0]
         fileUpload.uploadFileToUrl(filess).then(function (response) {
+        alert("image uploaded")
         console.log(response.data);
         var filedata=response.data;
         if (filedata){

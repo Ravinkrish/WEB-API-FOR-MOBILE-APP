@@ -64,7 +64,7 @@
         <td>{{canvas.OtherChiefGuest}}</td>
         <td>{{canvas.GuestDetails}}</td>
         <!--<td>-->
-            <!--<img src="data:image/png;base64,{{canvas.CanvasMoreImages[0]}}" style="height:100px; width:100px;">-->
+            <!--<img src="data:image/png;base64,{{canvas.CanvasMoreImages}}" style="height:100px; width:100px;">-->
         <!--</td>-->
         <td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal" ng-click="showEditForm(); getCanvas(canvas._id)" >
             <span class="glyphicon glyphicon-pencil"></span>Update
@@ -72,20 +72,82 @@
             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" ng-click="openDeleteModal(canvas._id);">
                 <span class="glyphicon glyphicon-trash" ></span>Del
             </button>
-            <button type="button" class="btn btn-primary btn-sm " ng-click="uploadMoreImages(canvas._id)">Upload images
+            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#dataview" ng-click="setSlideImages(canvas.CanvasMoreImages)">
+                <span class="glyphicon glyphicon-eye" ></span>View
             </button>
-
+            <button type="button" style="margin-left:45px;" class="btn btn-primary btn-sm " ng-click="uploadMoreImages(canvas._id)">Upload images
+            </button>
         </td>
     </tr>
-
-
-
 </table>
 <dir-pagination-controls class="paging" style="margin-left:450px;"
                          max-size="3"
                          direction-links="true"
                          boundary-links="true" >
 </dir-pagination-controls>
+
+<script>
+    $('.carousel').carousel()
+</script>
+
+<!--<div class="carousel-inner" role="listbox" ng-repeat="image in slideImages">-->
+    <!--<div class="carousel-item active" >-->
+        <!--<img class="d-block img-fluid" src="data:image/png;base64,{{image}}" style="height:100px; width:100px;" alt="First slide">-->
+    <!--</div>-->
+<!--</div>-->
+
+<div class="modal fade" id="dataview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">view image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body row">
+
+                <div class="container col-sm-12">
+                    <h2>Carousel Example</h2>
+                    <div id="myCarousel" class="carousel slide col-sm-offset-2  col-sm-8" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators col-sm-4">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner col-sm-4">
+                            <div class="item active">
+                                <img src="images/1.jpg" alt="Los Angeles" style="height:300px; width:400px;">
+                            </div>
+
+                            <div class="item" ng-repeat="image in slideImages">
+                                <img src="data:image/png;base64,{{image}}" alt="Chicago" style="height:300px; width:400px;">
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 <div ng-hide="true">
     <input id="uploadBtn" type="file" class="upload" ng-model="myFile" base-sixty-four-input>
     <button style="color:black;" ng-click="upload()" id="upload">Upload Logo</button>
