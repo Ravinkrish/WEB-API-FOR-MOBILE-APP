@@ -33,10 +33,10 @@ webapp.factory('CanvasServices',function($http){
         return productImages;
     }
 
-    var updateMoreImages=function(mongoid,filename, fileObj)
+    var updateMoreImages=function(mongoid,filename,fileObj)
     {
         console.log(mongoid,filename)
-        return $http.post('/updateMoreImagedata/'+mongoid+'/'+filename, fileObj);
+        return $http.post('/updateMoreImagedata/'+mongoid+'/'+filename,fileObj);
     }
       return{
       getAllCanvas:getAllCanvas,

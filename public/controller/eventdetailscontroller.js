@@ -22,7 +22,9 @@ webapp.controller("EventCtrl",function($scope,EventServices,fileUpload,$timeout)
  //   save all events
      $scope.saveDetails=function()
      {
-         $scope.eventList.EventBrochures = EventServices.getEventBrochuresImages();
+
+         $scope.event.EventBrochures = EventServices.getEventBrochuresImages();
+         console.log($scope.event);
          EventServices.postAllEventDetails($scope.event)
              .then(function (resultDetails)
              {
@@ -62,6 +64,9 @@ $scope.updateEvent = function(){
             });
     }
 
+$scope.setSlideImages = function(images){
+    $scope.slideImages = images;
+}
 
 $scope.showAddForm = function(){
         $scope.event = {};
@@ -97,7 +102,7 @@ console.log(file)
         console.log(response.data);
         var filedata=response.data;
         if (filedata){
-        EventServices.updateMoreImages(imagearrayid,filedata).then(function(response){
+        EventServices.updateMoreImages(imagearrayid, filedata, {fileObj:file.base64}).then(function(response){
         console.log(response.data);
         })
 
@@ -135,7 +140,7 @@ $("#upload").click();
 
 $scope.uploadfile=function(fliedata)
 {
-console.log(fliedata);
+//console.log(fliedata);
 //console.log(fliedata);
 //console.log("i am here")
 //var data;
@@ -153,9 +158,7 @@ angular.element( document.querySelector('.upload') ).change(function() {
 
 });
 
-function init(){
   $scope.getAllEvent();
-}
-init()
+
 //unwanted codes
 });

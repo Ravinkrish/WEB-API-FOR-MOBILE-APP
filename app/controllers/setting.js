@@ -48,42 +48,71 @@ newCandidateDetailsModel.productOfferId=1;
 
 
 router.post('/SettingDetails', function(req, res, next) {
-    SettingDetailsModel.findOneAndUpdate({},req.body,{upsert: true, new:true},function(err,result){
-            if(err){
-                console.log(err.stack)
-            }else{
-                res.send(result)
-            }
+//console.log(req.body);
 
-        });
-    /*console.log(req.body);
+    var newSettingDetailsModel = new SettingDetailsModel(req.body);
 
-    var newCandidateDetailsModel = new CandidateDetailsModel(req.body);
-    CandidateDetailsModel.count(function(err,offercount){
-            if(offercount!=0)
-            {
-      newCandidateDetailsModel.productOfferId=offercount+1;
-    newCandidateDetailsModel.save(function(err,result) {
+
+    newSettingDetailsModel.save(function(err,result) {
         if (err){
             console.log('Error in Saving user: '+err);
         }
         res.send(result);
     });
-
-}
-else if(offercount==0)
-{
-newCandidateDetailsModel.productOfferId=1;
-    newCandidateDetailsModel.save(function(err,result) {
-        if (err){
-            console.log('Error in Saving user: '+err);
-        }
-        res.send(result);
-    });
-
-}
-});*/
 });
+
+
+router.delete('/deleteSetting' ,function(req, res, next){
+    SettingDetailsModel.remove({},function(err,result){
+        if(err){
+            console.log(err.stack)
+        }
+        else{
+            res.send(result)
+        }
+    });
+});
+
+
+
+
+//router.post('/SettingDetails', function(req, res, next) {
+//    SettingDetailsModel.findOneAndUpdate({},req.body,{upsert: true, new:true},function(err,result){
+//            if(err){
+//                console.log(err.stack)
+//            }else{
+//                res.send(result)
+//            }
+//
+//        });
+//    /*console.log(req.body);
+//
+//    var newCandidateDetailsModel = new CandidateDetailsModel(req.body);
+//    CandidateDetailsModel.count(function(err,offercount){
+//            if(offercount!=0)
+//            {
+//      newCandidateDetailsModel.productOfferId=offercount+1;
+//    newCandidateDetailsModel.save(function(err,result) {
+//        if (err){
+//            console.log('Error in Saving user: '+err);
+//        }
+//        res.send(result);
+//    });
+//
+//}
+//else if(offercount==0)
+//{
+//newCandidateDetailsModel.productOfferId=1;
+//    newCandidateDetailsModel.save(function(err,result) {
+//        if (err){
+//            console.log('Error in Saving user: '+err);
+//        }
+//        res.send(result);
+//    });
+//
+//}
+//});*/
+//});
 
 
 router.get('/AllSettingDetails', function(req, res, next) {

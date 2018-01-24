@@ -3059,7 +3059,10 @@ p.est span{
 			<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal" ng-click="openDeleteModal(achievement._id);">
 				<span class="glyphicon glyphicon-trash"></span>Del
 			</button>
-			<button type="button" class="btn btn-primary btn-sm" ng-click="uploadMoreImages(achievement._id)">Upload images
+			<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#dataview" ng-click="setSlideImages(achievement.AchievementMoreImages)">
+				<span class="glyphicon glyphicon-eye-open"></span>View
+			</button>
+			<button type="button" style="margin-left:50px;" class="btn btn-primary btn-sm" ng-click="uploadMoreImages(achievement._id)">Upload images
 			</button>
 		</td>
 	</tr>
@@ -3070,9 +3073,59 @@ p.est span{
 						 boundary-links="true" >
 </dir-pagination-controls>
 <div ng-hide="true">
-	<input id="uploadBtn" type="file" class="upload" file-model="myFile">
+	<input id="uploadBtn" type="file" class="upload" ng-model="myFile" base-sixty-four-input>
 	<button style="color:black;" ng-click="upload()" id="upload">Upload Logo</button>
 </div>
+
+
+<div class="modal fade" id="dataview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">view image</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body row">
+
+				<div class="container col-sm-12">
+					<h2>Carousel Example</h2>
+					<div id="myCarousel" class="carousel slide col-sm-offset-2  col-sm-8" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators col-sm-4">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+							<li data-target="#myCarousel" data-slide-to="2"></li>
+						</ol>
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner col-sm-4">
+							<div class="item active">
+								<img src="images/1.jpg" alt="Los Angeles" style="height:300px; width:400px;">
+							</div>
+
+							<div class="item" ng-repeat="image in slideImages">
+								<img src="data:image/png;base64,{{image}}" alt="Chicago" style="height:300px; width:400px;">
+							</div>
+						</div>
+
+						<!-- Left and right controls -->
+					</div>
+				</div>
+
+
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">

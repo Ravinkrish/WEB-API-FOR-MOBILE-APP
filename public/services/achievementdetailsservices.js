@@ -36,9 +36,9 @@ webapp.factory('AchievementServices',function($http){
        return productImages;
      }
 
- var updateMoreImages=function(mongoid,filename)
+ var updateMoreImages=function(mongoid,filename,fileObj)
      {
-       return $http.post('/updateMoreImages/'+mongoid+'/'+filename);
+       return $http.post('/updateAchievementImages/'+mongoid+'/'+filename,fileObj);
      }
       return{
       getAllAchievement:getAllAchievement,

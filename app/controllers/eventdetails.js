@@ -85,8 +85,12 @@ else
 });
 
 
-router.post('/updateMoreImageDetails/:mongoid/:filename',function(req,res,next){
-EventDetailsModel.findOneAndUpdate({_id:req.params.mongoid},{ $push:{EventMoreImages:req.params.filename}},function(err,result){
+router.post('/updateEventImages/:mongoid/:filename',function(req,res){
+console.log('**********************');
+console.log(req.params);
+console.log(req.body);
+EventDetailsModel.findOneAndUpdate({_id:req.params.mongoid},
+{ $push:{EventMoreImages:req.body.fileObj}},function(err,result){
                     if(err)
                         {
                          console.log(err.stack)
@@ -98,9 +102,7 @@ EventDetailsModel.findOneAndUpdate({_id:req.params.mongoid},{ $push:{EventMoreIm
 
                         }
 
-
-
-      })
+       })
 
 })
 

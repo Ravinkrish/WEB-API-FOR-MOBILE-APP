@@ -8,6 +8,18 @@ var logodata;
     setlogo.SettingLogo=logodetails
   return $http.post('/setLogo',setlogo);
    }
+   var logoimage;
+   var setSettingLogoImage=function(image)
+   {
+   logoimage=image;
+   }
+    var getSettingLogoImage=function()
+      {
+//      console.log(logoimage);
+    return logoimage
+      }
+
+
     var getSettingLogoImages=function()
     {
     return logodata;
@@ -17,9 +29,15 @@ var logodata;
     return $http.get('/AllSettingDetails');
     }
 
-    var postAllSettingDetails = function()
+    var postAllSettingDetails = function(settingdata)
     {
-     return $http.post('/SettingDetails');
+    console.log(settingdata);
+     return $http.post('/SettingDetails',settingdata);
+    }
+
+     var deleteSetting=function()
+    {
+       return $http.delete('/deleteSetting');
     }
 
 
@@ -46,7 +64,11 @@ var logodata;
       return{
       setSettingLogoImages:setSettingLogoImages,
       getSettingLogoImages:getSettingLogoImages,
-      getAllSettingDetails:getAllSettingDetails
+      getAllSettingDetails:getAllSettingDetails,
+      setSettingLogoImage:setSettingLogoImage,
+      getSettingLogoImage:getSettingLogoImage,
+      postAllSettingDetails:postAllSettingDetails,
+      deleteSetting:deleteSetting
 
 //      updateSurveyDataDetails:updateSurveyDataDetails
 }

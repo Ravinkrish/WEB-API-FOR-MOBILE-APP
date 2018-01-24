@@ -8,16 +8,27 @@ $scope.getSettingDetail = function () {
      });
 };
 
-$scope.saveDetails=function(){
+$scope.saveDetails=function(slogan){
+ $scope.SettingDetail={};
+         $scope.SettingDetail.SettingSlogan =slogan ;
+         $scope.SettingDetail.SettingLogo=IndexServices.getSettingLogoImage();
+         console.log($scope.SettingDetail);
         IndexServices.postAllSettingDetails($scope.SettingDetail)
             .then(function (resultDetails) {
                 $scope.getSettingDetail();
-                console.log('Canvas detail saved successfully');
+                console.log('setting  detail saved successfully');
              },
              function error(err) {
-                console.log('Canvas save failed:', err);
+                console.log('setting save failed:', err);
              });
     };
+
+$scope.deleteSettingDetails=function(){
+console.log('setting detail deleted successfully');
+    IndexServices.deleteSetting().then(function (resultDetails) {
+        $scope.getSettingDetail();
+    });
+}
 
 
 
@@ -26,10 +37,9 @@ $scope.uploadfile=function(fliedata)
 
 //console.log(fliedata);
 $scope.imagedata=fliedata.base64;
+IndexServices.setSettingLogoImage($scope.imagedata);
+
 //console.log($scope.imagedata);
-IndexServices.setSettingLogoImages($scope.imagedata).then(function(res){
-console.log(res.data);
-});
 }
 
 

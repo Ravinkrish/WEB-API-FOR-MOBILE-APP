@@ -84,8 +84,9 @@ else
 });
 
 
-router.post('/updateMoreImages/:mongoid/:filename',function(req,res,next){
-AchievementDetailsModel.findOneAndUpdate({_id:req.params.mongoid},{ $push:{AchievementMoreImages:req.params.filename}},function(err,result){
+router.post('/updateAchievementImages/:mongoid/:filename',function(req,res,next){
+AchievementDetailsModel.findOneAndUpdate({_id:req.params.mongoid},
+{ $push:{AchievementMoreImages:req.body.fileObj}},function(err,result){
                     if(err)
                         {
                          console.log(err.stack)

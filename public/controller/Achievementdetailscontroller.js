@@ -60,6 +60,10 @@ $scope.updateAchievement = function(){
             });
     }
 
+$scope.setSlideImages = function(images){
+    $scope.slideImages = images;
+}
+
 
 $scope.showAddForm = function(){
         $scope.achievement = {};
@@ -93,7 +97,7 @@ console.log(file)
         console.log(response.data);
         var filedata=response.data;
         if (filedata){
-        AchievementServices.updateMoreImages(imagearrayid,filedata).then(function(response){
+        AchievementServices.updateMoreImages(imagearrayid,filedata,{fileObj:file.base64}).then(function(response){
         console.log(response.data);
         })
 

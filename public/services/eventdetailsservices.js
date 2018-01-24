@@ -38,9 +38,10 @@ var logodata;
       return productImages;
     }
 
- var updateMoreImages=function(mongoid,filename)
+ var updateMoreImages=function(mongoid,filename,fileObj)
     {
-      return $http.post('/updateMoreImageDetails/'+mongoid+'/'+filename);
+        console.log('inside the angular service');
+      return $http.post('/updateEventImages/'+mongoid+'/'+filename,fileObj);
     }
 
  var setEventBrochuresImages=function(logo)
