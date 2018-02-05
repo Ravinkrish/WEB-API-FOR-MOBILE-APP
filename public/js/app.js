@@ -2,7 +2,7 @@ var webapp = angular.module('webapp', ['ui.router','angularUtils.directives.dirP
 
    webapp.config(function($stateProvider, $urlRouterProvider) {
 
-       $urlRouterProvider.otherwise('/home');
+       $urlRouterProvider.otherwise('/candidate');
 
        $stateProvider
 
