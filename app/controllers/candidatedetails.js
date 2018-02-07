@@ -8,6 +8,8 @@ var express = require('express'),
     };
 
 router.post('/CandidateDetails', function(req, res, next) {
+    console.log('jf fjf fjfjf');
+    console.log(req.body);
     CandidateDetailsModel.findOneAndUpdate({},req.body,{upsert: true, new:true},function(err,result){
             if(err){
                 console.log(err.stack)

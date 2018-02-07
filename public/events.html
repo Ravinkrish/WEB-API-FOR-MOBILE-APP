@@ -283,10 +283,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 
 <div style="margin-left: -301px;">
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" ng-click="showAddForm()" style="margin-left:300px;">AddEventDetails</button>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" ng-click="showAddForm()" style="margin-left:300px;"><span class="glyphicon glyphicon-th-list"></span> AddEventDetails</button>
 </div>
 <br/>
-<!--{{eventList}}-->
 <table id="customers">
 	<tr>
 		<th>EventName</th>
@@ -294,8 +293,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<th>EventLocation</th>
 		<th>Noofpeoples</th>
 		<th>Eventcost</th>
-		<th>EventAddress</th>
-		<th>EventBrochures</th>
+		<!--<th>EventAddress</th>-->
+		<!--<th>EventBrochures</th>-->
 		<th>Action</th>
 	</tr>
 	<tr dir-paginate="event in eventList|filter:searchtext|itemsPerPage:3">
@@ -304,15 +303,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<td>{{event.Eventlocation}}</td>
 		<td>{{event.Noofpeoples}}</td>
 		<td>{{event.EventCost}}</td>
-		<td>{{event.EventDetails}}</td>
-		<td><img src="data:image/gif;base64,{{event.EventBrochures}}" style="height:50px; width:50px;" class="card-img-top"/></td>
+		<!--<td>{{event.EventDetails}}</td>-->
+		<!--<td><img src="data:image/gif;base64,{{event.EventBrochures}}" style="height:50px; width:50px;" class="card-img-top"/></td>-->
 		<td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal" ng-click="showEditForm(); getEvent(event._id)">
 			<span class="glyphicon glyphicon-pencil"></span>update
 		    </button>
 			<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal"  ng-click="openDeleteModal(event._id);">
 				<span class="glyphicon glyphicon-trash"></span>del
 			</button>
-			<button type="button"  style="margin-left:35px;"class="btn btn-warning btn-sm" data-toggle="modal" data-target="#dataview" ng-click="setSlideImages(event.EventMoreImages)">
+			<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#dataview" ng-click="setSlideImages(event.EventMoreImages)">
 				<span class="glyphicon glyphicon-eye-open"></span>View
 			</button>
 			<button type="button"  class="btn btn-primary btn-sm" ng-click="uploadMoreImages(event._id)">upload more images
@@ -337,7 +336,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">view image</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -345,7 +343,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="modal-body row">
 
 				<div class="container col-sm-12">
-					<h2>Carousel Example</h2>
+					<h2>EVENTS IMAGES</h2>
 					<div id="myCarousel" class="carousel slide col-sm-offset-2  col-sm-8" data-ride="carousel">
 						<!-- Indicators -->
 						<ol class="carousel-indicators col-sm-4">

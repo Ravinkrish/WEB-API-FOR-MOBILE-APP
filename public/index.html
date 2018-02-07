@@ -115,7 +115,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							</li>
 							<li><a ui-sref="results">Events</a></li>
 							<li><a ui-sref="about">Achieved</a></li>
-							<li><a ui-sref="codes" data-toggle="modal" data-target="#exampleModal">Setting</a></li>
+							<li><a  data-toggle="modal" data-target="#settingview">Setting</a></li>
 							<li><a ui-sref="contact">Contact Us</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->	
@@ -785,18 +785,21 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //footer -->
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="settingview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">New message</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Add Setting Detail</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
+			<div class="modal-body">
+			<form>
+
 			<div class="form-group">
-				<label >App Slogan</label>
-				<input type="text" class="form-control"  ng-model="SettingDetail">
+				<label for="recipient-name" class="col-form-label" >App Slogan</label>
+				<input type="text" class="form-control" id="recipient-name"  ng-model="SettingDetail">
 			</div>
 
 			<div class="form-group">
@@ -805,7 +808,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<button type="button" style="margin-left: 220px;margin-top: -47px;" class="btn btn-primary" ng-click="uploadfile(file)">Upload</button>
 				<!--<input type="text" class="form-control" id="recipient-logo" ng-model="CandidateDetailsdata.CandidateLogo">-->
 			</div>
-
+			</form>
+			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveDetails(SettingDetail)">Save setting logo</button>

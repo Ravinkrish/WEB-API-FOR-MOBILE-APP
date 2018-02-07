@@ -199,9 +199,29 @@ EventDetailsModel.find({},{productOfferId:1,productOfferName:1},function(err,res
 
 
 
-          })
+      })
+})
+
+
+router.get('/downloadBrochure/:eventMongoId',function(req,res,next){
+    console.log(req.params);
+    EventDetailsModel.findOne({"_id":req.params.eventMongoId},{"EventBrochures":1},function(err,result){
+                    if(err)
+                        {
+                         console.log(err.stack)
+                        }
+                     else
+                      {
+                         console.log(result);
+                         res.send(result);
+
+                        }
+
+
+                       })
 
 })
+
 
 
 

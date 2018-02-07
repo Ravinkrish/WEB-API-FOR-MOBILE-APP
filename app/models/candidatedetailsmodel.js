@@ -8,7 +8,7 @@ var ElectionResultSchema = new mongoose.Schema(
     OfficeAddress:String,
     CandidateLogo:String,
     CandidateSlogan:String,
-    survival_info:{},
+    survival_info:[],
     Election_history:{}
 },
 {collection:"election"});

@@ -9,9 +9,18 @@ $scope.getCandidateDetail = function () {
      });
 };
 
+$scope.survival_info={}
+
+$scope.addSurvivalDetails = function(){
+    var survivalInfo =angular.copy($scope.survival_info);
+    $scope.candidateDetail.survival_info.push(survivalInfo);
+    $scope.saveCandidateDetails();
+}
+
 // Save/update candidate detail
 $scope.saveCandidateDetails = function(){
     $scope.candidateDetail.CandidateLogo=CandidateServices.getCompanyLogoImages();
+
     CandidateServices.postAllCandidateDetails($scope.candidateDetail)
         .then(function (resultDetails) {
             $scope.disableAddBtn = true;

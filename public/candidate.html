@@ -3159,11 +3159,23 @@ p.est span{
         <!--<h3 style="margin-left:470px;">SURVIVAL DURATION</h3>-->
         <br/>
         <div style="margin-left: -301px;">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addsurveydetails" style="margin-left:300px;"><span class="glyphicon glyphicon-user"></span>AddSurvivalDuration</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addsurveydetails" style="margin-left:300px;"><span class="glyphicon glyphicon-list-alt"></span> AddSurvivalDuration </button>
         </div>
         <br/><br/>
-        <img class="card-img-top" src="images/p1.jpg" alt="Card image cap">
-        <div class="card" style="width: 57rem;margin-left:350px;margin-top:-225px;">
+        <table id="customers">
+            <tr>
+                <th>DATE:</th>
+                <th>CONSTITUENCY:</th>
+                <th>CONSTITUENCYDETAILS:</th>
+            </tr>
+            <tr ng-repeat="si in candidateDetail.survival_info">
+                <td>{{si.Date}}</td>
+                <td>{{si.Constituency}}</td>
+                <td>{{si.ConstituencyDetails}}</td>
+            </tr>
+        </table>
+<!--
+        <div class="card" style="width:60rem;margin-left:100px;margin-top:-30px;">
             <div class="card-header">
             </div>
             <ul class="list-group list-group-flush">
@@ -3172,6 +3184,8 @@ p.est span{
                 <li class="list-group-item"style="background-color:deepskyblue;"><span style="color:darkblue">CONSTITUENCYDETAILS:</span>{{candidateDetail.survival_info.ConstituencyDetails}}</li>
             </ul>
         </div>
+-->
+        <br/><br/>
         <div style="margin-left:960px;">
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addsurveydetails" >
                 <span class="glyphicon glyphicon-pencil" ></span>Update
@@ -3202,7 +3216,7 @@ p.est span{
                         <label  for="recipient-name"  class="col-form-label" >Date
                         </label>
                         <div class="input-group" ng-controller="dateandtimepicCtrl as ctrl">
-                            <input type="text" class="form-control" datetime-picker  ng-model="candidateDetail.survival_info.Date" is-open="ctrl.picker6.open"  ng-change="dateAndTime(ctrl.picker6.date);changingDateValue(ctrl.picker6.date)" ng-init="ctrl.picker6.date"/>
+                            <input type="text" class="form-control" datetime-picker  ng-model="survival_info.Date" is-open="ctrl.picker6.open"  ng-change="dateAndTime(ctrl.picker6.date);changingDateValue(ctrl.picker6.date)" ng-init="ctrl.picker6.date"/>
                             <span class="input-group-btn">
 									<button type="button" class="btn btn-default" ng-click="ctrl.openCalendar($event, 'picker6')"><span class="glyphicon glyphicon-calendar"></span>
 									</button>
@@ -3215,17 +3229,17 @@ p.est span{
                     </div>-->
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Constituency:</label>
-                        <input type="text" class="form-control" id="recipient-Details" ng-model="candidateDetail.survival_info.Constituency">
+                        <input type="text" class="form-control" id="recipient-Details" ng-model="survival_info.Constituency">
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Constituency Details:</label>
-                        <textarea class="form-control" id="message-text1" ng-model="candidateDetail.survival_info.ConstituencyDetails"></textarea>
+                        <textarea class="form-control" id="message-text1" ng-model="survival_info.ConstituencyDetails"></textarea>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveCandidateDetails()">Save Details</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="addSurvivalDetails()">Save Details</button>
                 <!--<button type="button" class="btn btn-primary" ng-click="updateSurvey(candidate)">Update details</button>-->
 
             </div>
@@ -3285,11 +3299,10 @@ p.est span{
         <!--<h3 style="margin-left:470px;">ELECTION HISTORY</h3>-->
         <br/>
         <div style="margin-left: -301px;">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addelectiondetails" style="margin-left:300px;">AddElectionHistory</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addelectiondetails" style="margin-left:300px;"> <span class="glyphicon glyphicon-book"></span> AddElectionHistory</button>
         </div>
         <br/><br/>
-        <img class="card-img-top" src="images/p1.jpg" alt="Card image cap">
-        <div class="card" style="width: 57rem;margin-left:350px;margin-top:-225px;">
+        <div class="card" style="width:60rem;margin-left:100px;margin-top:-30px;">
             <div class="card-header">
             </div>
             <ul class="list-group list-group-flush">

@@ -41,28 +41,28 @@
     </div>
 </div>
 <table id="customers">
-    <button type="button" style="background-color:darkblue;" class="btn btn-success" ng-click="showAddForm()" data-toggle="modal" data-target="#exampleModal" >Add New Canvas</button>
+    <button type="button" style="background-color:darkblue;" class="btn btn-success" ng-click="showAddForm()" data-toggle="modal" data-target="#exampleModal" ><span class="glyphicon glyphicon-th-list"></span> Add New Canvas</button>
     <br/><br/>
     <tr>
         <th>Title</th>
         <th>Date</th>
         <!--<th>Time</th>-->
-        <th>Address</th>
-        <th>Description</th>
+        <!--<th>Address</th>-->
+        <!--<th>Description</th>-->
         <th>Expected Crowd</th>
         <th>OtherChiefGuest</th>
-        <th>Guestdetails</th>
+        <!--<th>Guestdetails</th>-->
         <th>Action</th>
     </tr>
     <tr dir-paginate="canvas in canvasList|filter:searchtext|itemsPerPage:3">
         <td>{{canvas.Title}}</td>
         <td>{{canvas.Date}}</td>
         <!--<td>{{canvas.Time}}</td>-->
-        <td>{{canvas.Address}}</td>
-        <td>{{canvas.Description}}</td>
+        <!--<td>{{canvas.Address}}</td>-->
+        <!--<td>{{canvas.Description}}</td>-->
         <td>{{canvas.ExpectedGrowth}}</td>
         <td>{{canvas.OtherChiefGuest}}</td>
-        <td>{{canvas.GuestDetails}}</td>
+        <!--<td>{{canvas.GuestDetails}}</td>-->
         <!--<td>-->
             <!--<img src="data:image/png;base64,{{canvas.CanvasMoreImages}}" style="height:100px; width:100px;">-->
         <!--</td>-->
@@ -75,7 +75,7 @@
             <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#dataview" ng-click="setSlideImages(canvas.CanvasMoreImages)">
                 <span class="glyphicon glyphicon-eye-open" ></span>View
             </button>
-            <button type="button" style="margin-left:45px;" class="btn btn-primary btn-sm " ng-click="uploadMoreImages(canvas._id)">Upload images
+            <button type="button"class="btn btn-primary btn-sm " ng-click="uploadMoreImages(canvas._id)">Upload images
             </button>
         </td>
     </tr>
@@ -100,15 +100,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">view image</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body row">
-
                 <div class="container col-sm-12">
-                    <h2>Carousel Example</h2>
+                    <h2>CANVAS IMAGES</h2>
                     <div id="myCarousel" class="carousel slide col-sm-offset-2  col-sm-8" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators col-sm-4">

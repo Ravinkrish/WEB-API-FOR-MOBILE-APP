@@ -37,6 +37,8 @@ webapp.controller("EventCtrl",function($scope,EventServices,fileUpload,$timeout)
              });
      };
 
+
+
 // delete the events
      $scope.deleteEvent = function(eventId)
      {

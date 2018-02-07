@@ -3034,24 +3034,24 @@ p.est span{
 	</div>
 </div>
 <div style="margin-left: -301px;">
-	<button type="button" class="btn btn-primary" data-toggle="modal" ng-click="showAddForm()" data-target="#exampleModal" style="margin-left:300px;">Add Achievement Details</button>
+	<button type="button" class="btn btn-primary" data-toggle="modal" ng-click="showAddForm()" data-target="#exampleModal" style="margin-left:300px;"><span class="glyphicon glyphicon-th-list"></span> Add Achievement Details</button>
 </div>
 <br/>
 <table id="customers">
 	<tr>
 		<th>AchievementName</th>
-		<th>AchievementDate</th>
-		<th>Achievementlocation</th>
-		<th>NoofAchievements</th>
+		<!--<th>AchievementDate</th>-->
+		<!--<th>Achievementlocation</th>-->
+		<!--<th>NoofAchievements</th>-->
 		<th>AchievementDetails</th>
 		<th>Action</th>
 
 	</tr>
 	<tr dir-paginate="achievement in achievementList|filter:searchtext|itemsPerPage:3">
 		<td>{{achievement.AchievementName}}</td>
-		<td>{{achievement.AchievementDate}}</td>
-		<td>{{achievement.Achievementlocation}}</td>
-		<td>{{achievement.NoofAchievements}}</td>
+		<!--<td>{{achievement.AchievementDate}}</td>-->
+		<!--<td>{{achievement.Achievementlocation}}</td>-->
+		<!--<td>{{achievement.NoofAchievements}}</td>-->
 		<td>{{achievement.AchievementDetails}}</td>
 		<td><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal" ng-click="showEditForm(); getAchievement(achievement._id)">
 			<span class="glyphicon glyphicon-pencil"></span>Update
@@ -3062,7 +3062,7 @@ p.est span{
 			<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#dataview" ng-click="setSlideImages(achievement.AchievementMoreImages)">
 				<span class="glyphicon glyphicon-eye-open"></span>View
 			</button>
-			<button type="button" style="margin-left:50px;" class="btn btn-primary btn-sm" ng-click="uploadMoreImages(achievement._id)">Upload images
+			<button type="button" class="btn btn-primary btn-sm" ng-click="uploadMoreImages(achievement._id)">Upload images
 			</button>
 		</td>
 	</tr>
